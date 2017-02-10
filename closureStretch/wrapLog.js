@@ -1,10 +1,7 @@
 var wrapLog = function (callback, name) {
   return function() {
     var args = [].slice.call(arguments);
-    var result = 0;
-    for (var i = 0; i < args.length; i++) {
-      result += args[i];
-    }
+    var result = callback.apply(this, args);
     console.log(name + '(' + args.join(',') + ')' + ' => ' + result);
   }
 };
