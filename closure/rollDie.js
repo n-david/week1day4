@@ -4,7 +4,7 @@ function makeLoadedDie() {
   return function() {
     index++;
     return list[index];
-  }
+  };
 }
 
 var rollLoadedDie = makeLoadedDie();
